@@ -1,0 +1,14 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+
+
+  <h1 style="text-align:center">BioData:</h1>
+  <div style="padding-left:50%">
+    <p><strong>First Name:</strong> {{ author.first_name }}</a></p>
+    <p><strong>Last Name:</strong> {{ author.last_name }}</p>
+    <p><strong>DOB:</strong> {{ author.date_of_birth }}</p>
+    <p><strong>DOD:</strong> {{ author.date_of_death }}</p>
+    <p><strong>Books:</strong> {{ book.title.all }}</p>
+  </div>
+{% endblock %}

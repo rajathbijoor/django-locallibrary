@@ -1,0 +1,33 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+
+  <form action="{% url 'catalog:user_login' %}" method="POST">
+            {% csrf_token %}
+            <label for="username" >Username:</label>
+            <input type="text" name="username" placeholder="Enter username" required>
+            <label for="password">Password:</label>
+            <input type="password" name="password" placeholder="Please enter your password">
+              <p></p>
+            <input class="btn btn-primary" type="submit" value="login" >
+          </form>
+
+  {% if form.errors %}
+        <p>Your username and password didnt match.Please try again!!</p>
+  {% endif %}
+
+  {% if next %}
+     {% if user.is_authenticated %}
+          <p>Your account doesnt have access to this page to proceed,
+          Please create a valid account</p>
+     {% else %}
+          <p>Please login to see this page</p>
+     {% endif %}
+  {% endif %}
+
+
+
+  {# assumes you setup the password_reset view in your URL conf #}
+  <p><a href="{% url 'password_reset' %}">Forgot Password?</p>
+
+{% endblock %}

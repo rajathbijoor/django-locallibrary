@@ -1,0 +1,20 @@
+{% extends "base_generic.html" %}
+
+{% block title %}<title>Home page</title>{% endblock %}
+{% block content %}
+  <h1>Cognizant Library Management System</h1>
+  <p>Welcome to Library management systems website developed by <em><strong>Rajath Bijoor</strong></em></p>
+  <p>Cognizant Library management systems provides an online interface to allow visitors to view or reserve library resources. Additionally library software provides back-end administrative features to support management of library collections and assets. Library management software may be deployed at universities and schools, or in corporations</p>
+  <h2>Dynamic content</h2>
+  <p>The library has the following record counts:</p>
+  <ul>
+    <li><strong>Books:</strong> {{ num_books }}</li>
+    <li><strong>Copies:</strong> {{ num_instances }}</li>
+    <li><strong>Copies available:</strong> {{ book_status }}</li>
+    <li><strong>Authors:</strong> {{ no_of_authors }}</li>
+    <li><strong>Genre Category:</strong> {{ no_of_genre_category }}</li>
+    <li><strong>Languages Available:</strong> {{ num_of_languages }}</li>
+  </ul>
+
+<footer><strong>You Have visited this page {{ num_visits }} time{% if num_visits > 1 %}s{% endif %}.</strong></footer>
+{% endblock %}
