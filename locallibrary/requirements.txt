@@ -1,4 +1,0 @@
-pillow
-argon2
-bcrypt
-django=3.1.4
