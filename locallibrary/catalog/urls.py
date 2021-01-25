@@ -1,7 +1,8 @@
 from django.urls import path
+from django.conf.urls import url
 from . import views
 
-app_name = 'catalog'
+#app_name = 'catalog'
 
 urlpatterns = [
     path('', views.index, name='index'),
@@ -19,5 +20,5 @@ urlpatterns = [
     path('books/<int:pk>/delete/', views.BookDelete.as_view(), name='book-delete'),
     path('allbooks/', views.LoanedBooksByAllUsersListview.as_view(), name='all-users-borrowed'),
     path('login/', views.user_login, name='user_login'),
-    path('register/', views.register, name='regis'),
+    url(r'^register/', views.register, name='user_regis'),
 ]

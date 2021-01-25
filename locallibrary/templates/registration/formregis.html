@@ -1,7 +1,7 @@
-<!DOCTYPE html>
-{% extends "catalog\base_generic.html" %}
+{% extends "base_generic.html" %}
 {% load static %}
 {% block body_content %}
+<h1>Hi</h1>
 <div>
     {% if registered %}
        <h1>Thank you for registering</h1>
@@ -12,13 +12,9 @@
            {% csrf_token %}
            {{ user_form.as_p }}
            {{ profile_form.as_p }}
-           <input type="submit" value="Register">
+           <button type="submit">Register</button>
        </form>
     {% endif %}
 
 </div>
 {% endblock %}
-
-
-{% endblock %}
-</html>

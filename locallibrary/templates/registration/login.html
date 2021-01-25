@@ -2,7 +2,7 @@
 
 {% block content %}
 
-  <form action="{% url 'catalog:user_login' %}" method="POST">
+  <form action="{% url 'user_login' %}" method="POST">
             {% csrf_token %}
             <label for="username" >Username:</label>
             <input type="text" name="username" placeholder="Enter username" required>

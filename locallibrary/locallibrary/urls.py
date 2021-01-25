@@ -30,6 +30,5 @@ urlpatterns = [
     path('accounts/', include('django.contrib.auth.urls')),
     path('logout/', views.user_logout, name='logout'),
     path('special/', views.special, name='spec'),
-
-
+    #path('register/', views.register, name='formregis'),
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
